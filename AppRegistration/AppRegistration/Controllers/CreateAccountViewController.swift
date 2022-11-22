@@ -36,8 +36,11 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        viewsIndicatorsOfPassword.forEach { view in
+            view.isHidden = true
+        }
+        
     }
     
 
@@ -63,6 +66,7 @@ class CreateAccountViewController: UIViewController {
            strengthOfPassword = VerificationService.isValidPassword(pass: pass)
         }
         errorPasswordLabel.isHidden = strengthOfPassword != .nothing
+        setUpStrongPassIndicatorsViews()
     }
     
     
@@ -76,11 +80,31 @@ class CreateAccountViewController: UIViewController {
     
     // MARK: - Func-s
     
-    func updateContinueButtonState() {
+    private func updateContinueButtonState() {
         continueButton.isEnabled = isValidEmail && isConfirmPassword && strengthOfPassword != .nothing
     }
     
-    
+    private func setUpStrongPassIndicatorsViews() {
+        
+        if strengthOfPassword.rawValue == 0 {
+            viewsIndicatorsOfPassword.forEach { view in
+                view.isHidden = true
+            }
+            return
+        }
+        
+            
+        viewsIndicatorsOfPassword.enumerated().forEach { index, view in
+            view.isHidden = false
+            
+            if index <= (strengthOfPassword.rawValue - 1) {
+                view.alpha = 1
+            } else {
+                view.alpha = 0.1
+            }
+                
+        }
+    }
     /*
     // MARK: - Navigation
 
