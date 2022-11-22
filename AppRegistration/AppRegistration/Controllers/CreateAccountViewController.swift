@@ -55,10 +55,17 @@ class CreateAccountViewController: UIViewController {
         errorEmailLabel.isHidden = isValidEmail
     }
     
+    
     @IBAction func passwordTFAction(_ sender: UITextField) {
         
-        
+        if let pass = sender.text,
+           !pass.isEmpty {
+           strengthOfPassword = VerificationService.isValidPassword(pass: pass)
+        }
+        errorPasswordLabel.isHidden = strengthOfPassword != .nothing
     }
+    
+    
     @IBAction func signInButton(_ sender: UIButton) {
     }
     @IBAction func confirmPasswordTF(_ sender: UITextField) {
