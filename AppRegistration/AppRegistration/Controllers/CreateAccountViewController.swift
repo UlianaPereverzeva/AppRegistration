@@ -26,9 +26,9 @@ class CreateAccountViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var isValidEmail = false { didSet { updateContinueButtonState }}
-    private var isConfirmPassword = false { didSet { updateContinueButtonState }}
-    private var strengthOfPassword: StrengthOfPassword = .nothing { didSet { updateContinueButtonState } }
+    private var isValidEmail = false { didSet { updateContinueButtonState() }}
+    private var isConfirmPassword = false { didSet { updateContinueButtonState() }}
+    private var strengthOfPassword: StrengthOfPassword = .nothing { didSet { updateContinueButtonState() }}
     
 
     // MARK: - Life cycle
@@ -56,6 +56,8 @@ class CreateAccountViewController: UIViewController {
     }
     
     @IBAction func passwordTFAction(_ sender: UITextField) {
+        
+        
     }
     @IBAction func signInButton(_ sender: UIButton) {
     }
