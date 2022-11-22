@@ -64,6 +64,8 @@ class CreateAccountViewController: UIViewController {
         if let pass = sender.text,
            !pass.isEmpty {
            strengthOfPassword = VerificationService.isValidPassword(pass: pass)
+        } else {
+            strengthOfPassword = .nothing
         }
         errorPasswordLabel.isHidden = strengthOfPassword != .nothing
         setUpStrongPassIndicatorsViews()
@@ -73,6 +75,16 @@ class CreateAccountViewController: UIViewController {
     @IBAction func signInButton(_ sender: UIButton) {
     }
     @IBAction func confirmPasswordTF(_ sender: UITextField) {
+        if let confirmPsswordText = sender.text,
+           !confirmPsswordText.isEmpty,
+           let passText = passwordTextField.text,
+           !passText.isEmpty {
+           isConfirmPassword = VerificationService.isConfirm(pass1: confirmPsswordText, pass2: passText)
+            
+        } else {
+           isConfirmPassword = false
+        }
+        errorConfirmPasswordLabel.isHidden = isConfirmPassword
     }
     @IBAction func continueButton(_ sender: UIButton) {
     }

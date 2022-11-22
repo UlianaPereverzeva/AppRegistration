@@ -36,11 +36,13 @@ final class VerificationService {
         
             guard email != nil else { return false }
             
-            let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{10,26}"
+            let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
             
             let pred = NSPredicate(format:"SELF MATCHES %@", regEx)
             return pred.evaluate(with: email)
         }
     
-    
+    static func isConfirm(pass1: String, pass2: String) -> Bool {
+        pass1 == pass2
+    }
 }
