@@ -13,16 +13,16 @@ class CreateAccountViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var errorEmailLabel: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var errorPasswordLabel: UILabel!
-    @IBOutlet var viewsIndicatorsOfPassword: [UIView]!
-    @IBOutlet weak var confirmPasswordTF: UITextField!
-    @IBOutlet weak var errorConfirmPasswordLabel: UILabel!
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var errorEmailLabel: UILabel!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var nameTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var errorPasswordLabel: UILabel!
+    @IBOutlet private var viewsIndicatorsOfPassword: [UIView]!
+    @IBOutlet private weak var confirmPasswordTF: UITextField!
+    @IBOutlet private weak var errorConfirmPasswordLabel: UILabel!
+    @IBOutlet private weak var continueButton: UIButton!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     // MARK: - Properties
     
@@ -40,13 +40,14 @@ class CreateAccountViewController: UIViewController {
         viewsIndicatorsOfPassword.forEach { view in
             view.isHidden = true
         }
-        
+        hideKeyboardWhenTappedAround()
+        startKeyboardObserver()
     }
     
 
     // MARK: - IBActions
     
-    @IBAction func emailTFAction(_ sender: UITextField) {
+    @IBAction private func emailTFAction(_ sender: UITextField) {
         
         if let email = sender.text,
            !email.isEmpty,
@@ -59,7 +60,7 @@ class CreateAccountViewController: UIViewController {
     }
     
     
-    @IBAction func passwordTFAction(_ sender: UITextField) {
+    @IBAction private func passwordTFAction(_ sender: UITextField) {
         
         if let pass = sender.text,
            !pass.isEmpty {
@@ -72,9 +73,11 @@ class CreateAccountViewController: UIViewController {
     }
     
     
-    @IBAction func signInButton(_ sender: UIButton) {
+    @IBAction private func signInButton(_ sender: UIButton) {
+        
     }
-    @IBAction func confirmPasswordTF(_ sender: UITextField) {
+    
+    @IBAction private func confirmPasswordTF(_ sender: UITextField) {
         if let confirmPsswordText = sender.text,
            !confirmPsswordText.isEmpty,
            let passText = passwordTextField.text,
@@ -86,11 +89,39 @@ class CreateAccountViewController: UIViewController {
         }
         errorConfirmPasswordLabel.isHidden = isConfirmPassword
     }
-    @IBAction func continueButton(_ sender: UIButton) {
+    @IBAction private func continueButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "SignupStoryboard", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "VerificationsVC") as? VerificationsVC else {
+            return
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
     // MARK: - Func-s
+    
+    private func startKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc func keyboardWillHide() {
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+    }
     
     private func updateContinueButtonState() {
         continueButton.isEnabled = isValidEmail && isConfirmPassword && strengthOfPassword != .nothing

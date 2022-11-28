@@ -17,6 +17,8 @@
 		85DDFD1C292C247A0017D662 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD1B292C247A0017D662 /* SignInViewController.swift */; };
 		85DDFD1E292C249E0017D662 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD1D292C249E0017D662 /* CreateAccountViewController.swift */; };
 		85DDFD21292C31270017D662 /* VerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD20292C31270017D662 /* VerificationService.swift */; };
+		85DDFD24292D30EE0017D662 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD23292D30EE0017D662 /* UIViewControllerExt.swift */; };
+		85DDFD262934F6340017D662 /* VerificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD252934F6340017D662 /* VerificationsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		85DDFD1B292C247A0017D662 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		85DDFD1D292C249E0017D662 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		85DDFD20292C31270017D662 /* VerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationService.swift; sourceTree = "<group>"; };
+		85DDFD23292D30EE0017D662 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		85DDFD252934F6340017D662 /* VerificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		85074726292B8A3A00425A97 /* AppRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				85DDFD22292D30A60017D662 /* extentions */,
 				85DDFD1A292C243B0017D662 /* Controllers */,
 				85DDFD1F292C30A80017D662 /* Services */,
 				8507473C292B904E00425A97 /* Models */,
@@ -107,6 +112,7 @@
 			children = (
 				85DDFD1B292C247A0017D662 /* SignInViewController.swift */,
 				85DDFD1D292C249E0017D662 /* CreateAccountViewController.swift */,
+				85DDFD252934F6340017D662 /* VerificationsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -117,6 +123,14 @@
 				85DDFD20292C31270017D662 /* VerificationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		85DDFD22292D30A60017D662 /* extentions */ = {
+			isa = PBXGroup;
+			children = (
+				85DDFD23292D30EE0017D662 /* UIViewControllerExt.swift */,
+			);
+			path = extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				85DDFD1E292C249E0017D662 /* CreateAccountViewController.swift in Sources */,
+				85DDFD262934F6340017D662 /* VerificationsVC.swift in Sources */,
 				85DDFD21292C31270017D662 /* VerificationService.swift in Sources */,
+				85DDFD24292D30EE0017D662 /* UIViewControllerExt.swift in Sources */,
 				85074728292B8A3A00425A97 /* AppDelegate.swift in Sources */,
 				8507472A292B8A3A00425A97 /* SceneDelegate.swift in Sources */,
 				85DDFD1C292C247A0017D662 /* SignInViewController.swift in Sources */,
