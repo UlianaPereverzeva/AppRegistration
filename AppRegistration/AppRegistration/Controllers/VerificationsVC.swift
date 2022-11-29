@@ -19,7 +19,7 @@ final class VerificationsVC: UIViewController {
     
     var userModel: UserModel?
     var randomNumber = Int.random(in: 100000 ... 999999)
-    
+    var sleepTime: Double = 3
     
     // MARK: - life cycle
     
@@ -38,6 +38,13 @@ final class VerificationsVC: UIViewController {
               !text.isEmpty,
         text == randomNumber.description else {
             errorLabel.isHidden = false
+            errorLabel.text = "Incorrect code. Please wait \(sleepTime) seconds"
+            sender.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + sleepTime) { [weak self] in
+                sender.isUserInteractionEnabled = true
+                self?.errorLabel.isHidden = true
+                self?.sleepTime *= 2
+            }
             return
         }
         

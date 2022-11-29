@@ -309,7 +309,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="Q6l-d5-FX2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="go" textContentType="one-time-code"/>
                                                 <connections>
                                                     <action selector="codeTextFieldAction:" destination="ZNv-aT-CJF" eventType="editingDidEndOnExit" id="cWb-Tr-aVj"/>
                                                 </connections>
