@@ -151,6 +151,7 @@
                         <outlet property="errorEmailLabel" destination="1Hc-va-IoK" id="lgj-VU-4yD"/>
                         <outlet property="errorPasswordLabel" destination="nZt-GY-OAH" id="N2B-jd-BCq"/>
                         <outlet property="passwordTF" destination="b9o-0h-Q9g" id="IpS-TM-hqk"/>
+                        <segue destination="Cf3-Vy-t5E" kind="show" identifier="goToMainTBVC" id="Krn-OF-2H5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,6 +167,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vc-v9-DXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1690" y="98"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="cJ3-HU-RaD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Cf3-Vy-t5E" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="yPB-R6-tdg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khv-Hi-IP4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zAN-9o-KvL">

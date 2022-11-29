@@ -33,7 +33,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInButtonAction() {
-         
+        performSegue(withIdentifier: "goToMainTBVC", sender: nil)
     }
     private func updateContinueButtonState() {
         if emailTF.text == UserDefaultsService.getUserModel()?.email,
@@ -47,6 +47,7 @@ class SignInViewController: UIViewController {
             errorPasswordLabel.isHidden = false
             }
         }
+        
         
     }
     private func startKeyboardObserver() {
