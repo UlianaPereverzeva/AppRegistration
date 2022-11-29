@@ -21,6 +21,8 @@
 		85DDFD262934F6340017D662 /* VerificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD252934F6340017D662 /* VerificationsVC.swift */; };
 		85DDFD28293504630017D662 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD27293504630017D662 /* UserModel.swift */; };
 		85DDFD2A293629B70017D662 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD29293629B70017D662 /* WelcomeViewController.swift */; };
+		85DDFD2C293637220017D662 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD2B293637220017D662 /* UserDefaultsService.swift */; };
+		85DDFD2E293637A70017D662 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD2D293637A70017D662 /* UserDefaultsExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		85DDFD252934F6340017D662 /* VerificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationsVC.swift; sourceTree = "<group>"; };
 		85DDFD27293504630017D662 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		85DDFD29293629B70017D662 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		85DDFD2B293637220017D662 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		85DDFD2D293637A70017D662 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				85DDFD20292C31270017D662 /* VerificationService.swift */,
+				85DDFD2B293637220017D662 /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				85DDFD23292D30EE0017D662 /* UIViewControllerExt.swift */,
+				85DDFD2D293637A70017D662 /* UserDefaultsExt.swift */,
 			);
 			path = extentions;
 			sourceTree = "<group>";
@@ -214,7 +220,9 @@
 			files = (
 				85DDFD1E292C249E0017D662 /* CreateAccountViewController.swift in Sources */,
 				85DDFD262934F6340017D662 /* VerificationsVC.swift in Sources */,
+				85DDFD2C293637220017D662 /* UserDefaultsService.swift in Sources */,
 				85DDFD28293504630017D662 /* UserModel.swift in Sources */,
+				85DDFD2E293637A70017D662 /* UserDefaultsExt.swift in Sources */,
 				85DDFD21292C31270017D662 /* VerificationService.swift in Sources */,
 				85DDFD24292D30EE0017D662 /* UIViewControllerExt.swift in Sources */,
 				85074728292B8A3A00425A97 /* AppDelegate.swift in Sources */,
