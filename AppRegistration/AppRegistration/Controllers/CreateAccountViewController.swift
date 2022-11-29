@@ -74,6 +74,7 @@ class CreateAccountViewController: UIViewController {
     
     
     @IBAction private func signInButton(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
         
     }
     
@@ -90,10 +91,17 @@ class CreateAccountViewController: UIViewController {
         errorConfirmPasswordLabel.isHidden = isConfirmPassword
     }
     @IBAction private func continueButton(_ sender: UIButton) {
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text else {
+            return
+        }
+        let userModel = UserModel(name: nameTextField.text, email: email, password: password)
+        
         let storyboard = UIStoryboard(name: "SignupStoryboard", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "VerificationsVC") as? VerificationsVC else {
             return
         }
+        vc.userModel = userModel
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
