@@ -342,6 +342,7 @@
                         <outlet property="codeTextField" destination="OEc-DS-ck9" id="i82-Co-PHX"/>
                         <outlet property="emailLabel" destination="d1K-27-8o1" id="PCO-Dc-FI5"/>
                         <outlet property="errorLabel" destination="nJy-hp-5Ld" id="Z7U-1O-FTd"/>
+                        <outlet property="horizontalConstraint" destination="Bn4-DZ-yvC" id="L97-9Z-BcG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fF6-6l-PbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

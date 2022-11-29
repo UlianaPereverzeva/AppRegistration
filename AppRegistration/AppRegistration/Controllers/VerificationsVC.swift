@@ -15,7 +15,7 @@ final class VerificationsVC: UIViewController {
     @IBOutlet private weak var codeTextField: UITextField!
     @IBOutlet private weak var emailLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
-    
+    @IBOutlet weak var horizontalConstraint: NSLayoutConstraint!
     
     var userModel: UserModel?
     var randomNumber = Int.random(in: 100000 ... 999999)
@@ -28,6 +28,7 @@ final class VerificationsVC: UIViewController {
         
         setUpUI()
         hideKeyboardWhenTappedAround()
+        startKeyboardObserver()
     }
     
     // MARK: -  Actions
@@ -37,6 +38,7 @@ final class VerificationsVC: UIViewController {
               !text.isEmpty,
         text == randomNumber.description else {
             errorLabel.isHidden = false
+            return
         }
         
     }
@@ -49,7 +51,27 @@ final class VerificationsVC: UIViewController {
         codeLabel.text = String(randomNumber)
     }
     
+    private func startKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    @objc func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        horizontalConstraint.constant -= keyboardSize.height
+        
+    }
     
+    @objc func keyboardWillHide(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        horizontalConstraint.constant += keyboardSize.height
+        
+    }
     /*
     // MARK: - Navigation
 
