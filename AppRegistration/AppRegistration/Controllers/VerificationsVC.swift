@@ -27,12 +27,20 @@ final class VerificationsVC: UIViewController {
         super.viewDidLoad()
         
         setUpUI()
+        hideKeyboardWhenTappedAround()
     }
     
     // MARK: -  Actions
 
     @IBAction func codeTextFieldAction(_ sender: UITextField) {
+        guard let text = sender.text,
+              !text.isEmpty,
+        text == randomNumber.description else {
+            errorLabel.isHidden = false
+        }
+        
     }
+    
     
     // MARK: -  Functions
     

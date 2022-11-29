@@ -309,9 +309,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="Q6l-d5-FX2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="postal-code"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                                 <connections>
-                                                    <action selector="codeTextFieldAction:" destination="ZNv-aT-CJF" eventType="editingDidEnd" id="jbo-pb-QvN"/>
+                                                    <action selector="codeTextFieldAction:" destination="ZNv-aT-CJF" eventType="editingDidEndOnExit" id="cWb-Tr-aVj"/>
                                                 </connections>
                                             </textField>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJy-hp-5Ld">
