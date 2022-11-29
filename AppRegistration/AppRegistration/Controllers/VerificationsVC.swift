@@ -15,7 +15,7 @@ final class VerificationsVC: UIViewController {
     @IBOutlet private weak var codeTextField: UITextField!
     @IBOutlet private weak var emailLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var horizontalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
     
     var userModel: UserModel?
     var randomNumber = Int.random(in: 100000 ... 999999)
@@ -48,6 +48,13 @@ final class VerificationsVC: UIViewController {
             return
         }
         
+        
+         let storyboard = UIStoryboard(name: "SignupStoryboard", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else {
+            return
+        }
+        vc.userModel = userModel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -68,16 +75,16 @@ final class VerificationsVC: UIViewController {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        horizontalConstraint.constant -= keyboardSize.height
-        
+        centerYConstraint.constant -= keyboardSize.height / 2
+        self.view.layoutIfNeeded()
     }
     
     @objc func keyboardWillHide(notification: Notification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        horizontalConstraint.constant += keyboardSize.height
-        
+        centerYConstraint.constant += keyboardSize.height / 2
+        self.view.layoutIfNeeded()
     }
     /*
     // MARK: - Navigation

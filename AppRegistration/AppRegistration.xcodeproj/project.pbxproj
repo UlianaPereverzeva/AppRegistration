@@ -20,6 +20,7 @@
 		85DDFD24292D30EE0017D662 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD23292D30EE0017D662 /* UIViewControllerExt.swift */; };
 		85DDFD262934F6340017D662 /* VerificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD252934F6340017D662 /* VerificationsVC.swift */; };
 		85DDFD28293504630017D662 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD27293504630017D662 /* UserModel.swift */; };
+		85DDFD2A293629B70017D662 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDFD29293629B70017D662 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		85DDFD23292D30EE0017D662 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		85DDFD252934F6340017D662 /* VerificationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationsVC.swift; sourceTree = "<group>"; };
 		85DDFD27293504630017D662 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		85DDFD29293629B70017D662 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				85DDFD1B292C247A0017D662 /* SignInViewController.swift */,
 				85DDFD1D292C249E0017D662 /* CreateAccountViewController.swift */,
 				85DDFD252934F6340017D662 /* VerificationsVC.swift */,
+				85DDFD29293629B70017D662 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				85074728292B8A3A00425A97 /* AppDelegate.swift in Sources */,
 				8507472A292B8A3A00425A97 /* SceneDelegate.swift in Sources */,
 				85DDFD1C292C247A0017D662 /* SignInViewController.swift in Sources */,
+				85DDFD2A293629B70017D662 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
